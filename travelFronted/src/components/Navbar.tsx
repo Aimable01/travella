@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../src/assets/logo.png";
 import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
@@ -6,15 +6,15 @@ import { useState, useEffect, useRef } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navRef = useRef<HTMLDivElement>(null); // Explicit type declaration
-  const [activeLink, setActiveLink] = useState<string>("Home");
+  const navRef = useRef<HTMLDivElement>(null);
+  const pathname = useLocation().pathname;
 
   const links = [
     { name: "Home", link: "/" },
     { name: "About", link: "/about" },
-    { name: "Services", link: "" },
-    { name: "Pricing", link: "" },
-    { name: "Contact", link: "" },
+    { name: "Services", link: "/services" },
+    { name: "Pricing", link: "/pricing" },
+    { name: "Contact", link: "/contact" },
   ];
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const Navbar = () => {
   return (
     <div
       ref={navRef}
-      className="sticky top-0 z-50 bg-white backdrop-blur-sm bg-opacity-70"
+      className="sticky top-0 z-50 bg-white backdrop-blur-sm bg-opacity-70 pr-10"
     >
       <nav className="md:flex md:justify-between md:items-center md:px-5 md:pt-1 md:pb-2">
         <Link
@@ -73,11 +73,10 @@ const Navbar = () => {
             {links.map((li, i) => (
               <Link
                 to={li.link}
-                className={`${activeLink === li.name ? "text-sky-500" : ""}`}
+                className={`${pathname === li.link ? "text-sky-500" : ""}`}
                 key={i}
                 onClick={() => {
                   setIsOpen(!isOpen);
-                  setActiveLink(li.name);
                 }}
               >
                 {li.name}{" "}
@@ -92,7 +91,7 @@ const Navbar = () => {
               </button>
             </Link>
             <Link to={""}>
-              <button className="bg-sky-500 border border-sky-500 rounded px-5 py-1">
+              <button className="text-white bg-sky-500 border border-sky-500 rounded px-5 py-1">
                 Register
               </button>
             </Link>
@@ -108,12 +107,9 @@ const Navbar = () => {
               <Link
                 to={li.link}
                 className={`${
-                  activeLink === li.name ? "text-sky-500" : ""
+                  pathname === li.link ? "text-sky-500" : ""
                 } hover:text-sky-700 duration-500`}
                 key={i}
-                onClick={() => {
-                  setActiveLink(li.name);
-                }}
               >
                 {li.name}{" "}
               </Link>
@@ -127,7 +123,7 @@ const Navbar = () => {
             </button>
           </Link>
           <Link to={""}>
-            <button className="bg-sky-500 border border-sky-500 rounded px-5 py-1 hover:bg-sky-600 duration-500">
+            <button className="text-white bg-sky-500 border border-sky-500 rounded px-5 py-1 hover:bg-sky-600 duration-500">
               Register
             </button>
           </Link>
