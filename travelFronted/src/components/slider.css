@@ -1,0 +1,8 @@
+.slick-slide > div {
+    margin: 0 10px; /* Adjust the value as needed */
+  }
+  
+  .slick-list {
+    margin: 0 -10px; /* Negative margin to compensate for the slide margins */
+  }
+  
