@@ -85,12 +85,12 @@ const Navbar = () => {
           </div>
           <hr className="text-gray-950" />
           <div className="flex gap-2 text-gray-800 font-semibold mt-2 bg-white p-3">
-            <Link to={""}>
+            <Link to={"/auth/signin"}>
               <button className="border border-gray-900 rounded px-5 py-1">
                 Login
               </button>
             </Link>
-            <Link to={""}>
+            <Link to={"/auth/signup"}>
               <button className="text-white bg-sky-500 border border-sky-500 rounded px-5 py-1">
                 Register
               </button>
@@ -117,12 +117,12 @@ const Navbar = () => {
           </div>
         </div>
         <div className="hidden md:flex gap-2 text-gray-800 font-semibold bg-white">
-          <Link to={""}>
+          <Link to={"/auth/signin"}>
             <button className="border border-gray-900 rounded px-5 py-1 hover:bg-slate-200 duration-500">
               Login
             </button>
           </Link>
-          <Link to={""}>
+          <Link to={"/auth/signup"}>
             <button className="text-white bg-sky-500 border border-sky-500 rounded px-5 py-1 hover:bg-sky-600 duration-500">
               Register
             </button>
