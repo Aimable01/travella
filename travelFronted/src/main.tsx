@@ -10,6 +10,7 @@ import Contact from "./components/Contact";
 import Signup from "./Auth/Signup";
 import Main from "./Auth/Main";
 import { AuthProvider } from "./Auth/AuthContext";
+import Profile from "./User/Profile";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,13 @@ const router = createBrowserRouter([
     ],
   },
   { path: "/auth/signup", element: <Signup /> },
-  { path: "/user", element: <Main /> },
+  {
+    path: "/user",
+    children: [
+      { index: true, element: <Main /> },
+      { path: "/user/profile", element: <Profile /> },
+    ],
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

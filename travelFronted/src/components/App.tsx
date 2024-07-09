@@ -2,10 +2,11 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { useAuth } from "../Auth/AuthContext";
-import Account from "../User/Account";
+import { useNavigate } from "react-router-dom";
 
 const App = () => {
-  const { session, loading, logout } = useAuth();
+  const { session, loading } = useAuth();
+  const navigate = useNavigate();
 
   if (loading) {
     return <div>Loading...</div>;
@@ -21,12 +22,7 @@ const App = () => {
           <Footer />
         </>
       ) : (
-        <Account key={session.user?.id} />
-      )}
-      {session && (
-        <button onClick={logout} className="button block">
-          Sign Out
-        </button>
+        navigate("/user")
       )}
     </>
   );
