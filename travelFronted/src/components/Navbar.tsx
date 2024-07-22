@@ -3,6 +3,7 @@ import logo from "../../src/assets/logo.png";
 import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
 import { useState, useEffect, useRef } from "react";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -85,15 +86,11 @@ const Navbar = () => {
           </div>
           <hr className="text-gray-950" />
           <div className="flex gap-2 text-gray-800 font-semibold mt-2 bg-white p-3">
-            <Link to={"/auth/signin"}>
-              <button className="border border-gray-900 rounded px-5 py-1">
-                Login
-              </button>
-            </Link>
-            <Link to={"/auth/signup"}>
-              <button className="text-white bg-sky-500 border border-sky-500 rounded px-5 py-1">
-                Register
-              </button>
+            <Link
+              to={"/login"}
+              className="flex text-white items-center gap-2 bg-sky-500 px-4 py-2 rounded-md font-semibold hover:scale-105 duration-500"
+            >
+              Get Started <FaLongArrowAltRight />
             </Link>
           </div>
         </div>
@@ -117,15 +114,11 @@ const Navbar = () => {
           </div>
         </div>
         <div className="hidden md:flex gap-2 text-gray-800 font-semibold bg-white">
-          <Link to={"/auth/signin"}>
-            <button className="border border-gray-900 rounded px-5 py-1 hover:bg-slate-200 duration-500">
-              Login
-            </button>
-          </Link>
-          <Link to={"/auth/signup"}>
-            <button className="text-white bg-sky-500 border border-sky-500 rounded px-5 py-1 hover:bg-sky-600 duration-500">
-              Register
-            </button>
+          <Link
+            to={"/login"}
+            className="flex text-white items-center gap-2 bg-sky-500 px-4 py-2 rounded-md font-semibold hover:scale-105 duration-500"
+          >
+            Get Started <FaLongArrowAltRight />
           </Link>
         </div>
       </nav>

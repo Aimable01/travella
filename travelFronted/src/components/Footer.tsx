@@ -18,7 +18,7 @@ const Footer = () => {
     { name: "location", desc: "Musanze, Rwanda" },
   ];
   return (
-    <div>
+    <div className="bg-white">
       <div className="mx-20 text-[15px] font-semibold grid grid-cols-2 grid-rows-2 gap-2 md:grid-cols-3 md:grid-rows-1">
         <div>
           <div>

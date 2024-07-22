@@ -160,8 +160,8 @@ const Home = () => {
           </div>
           <div className="flex justify-center">
             <Link
-              to={"/register"}
-              className="flex items-center gap-2 bg-sky-500 px-4 py-2 rounded-md font-semibold hover:animate-bounce"
+              to={"/login"}
+              className="flex items-center gap-2 bg-sky-500 px-4 py-2 rounded-md font-semibold hover:scale-105 duration-500"
             >
               Get Started <FaLongArrowAltRight />
             </Link>
