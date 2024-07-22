@@ -4,16 +4,21 @@ import { supabase } from "../supabaseClient";
 
 interface AuthContextProps {
   session: Session | null;
+  loading: boolean;
 }
 
 interface AuthProviderProps {
   children: ReactNode;
 }
 
-export const AuthContext = createContext<AuthContextProps>({ session: null });
+export const AuthContext = createContext<AuthContextProps>({
+  session: null,
+  loading: true,
+});
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [session, setSession] = useState<Session | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getSession = async () => {
@@ -21,6 +26,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         data: { session },
       } = await supabase.auth.getSession();
       setSession(session);
+      setLoading(false);
     };
 
     getSession();
@@ -28,6 +34,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const { data: authListener } = supabase.auth.onAuthStateChange(
       (_event, session) => {
         setSession(session);
+        setLoading(false);
       }
     );
 
@@ -37,6 +44,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ session }}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ session, loading }}>
+      {children}
+    </AuthContext.Provider>
   );
 };

@@ -5,7 +5,11 @@ import { useAuth } from "../auth/useAuth";
 import { supabase } from "../supabaseClient";
 
 const App = () => {
-  const { session } = useAuth();
+  const { session, loading } = useAuth();
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
