@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { useAuth } from "../auth/useAuth";
-import { supabase } from "../supabaseClient";
+import App1 from "../Authenticated/App1";
 
 const App = () => {
   const { session, loading } = useAuth();
@@ -21,10 +21,7 @@ const App = () => {
           <Footer />
         </>
       ) : (
-        <div>
-          <p>Welcome, {session.user?.email}</p>
-          <button onClick={() => supabase.auth.signOut()}>Sign Out</button>
-        </div>
+        <App1 />
       )}
     </>
   );
