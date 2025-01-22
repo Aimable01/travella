@@ -1,4 +1,5 @@
-# Logs
+.env
+
 logs
 *.log
 npm-debug.log*
@@ -17,7 +18,6 @@ coverage
 /cypress/videos/
 /cypress/screenshots/
 
-# Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -26,6 +26,3 @@ coverage
 *.njsproj
 *.sln
 *.sw?
-
-# Environment variables
-.env
