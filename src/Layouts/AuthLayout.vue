@@ -5,7 +5,7 @@
     >
       <RouterLink
         to="/"
-        className="flex items-center gap-2 cursor-pointer fixed left-8 xtab:static"
+        className="flex items-center gap-2 cursor-pointer left-8 xtab:static"
       >
         <img className="w-8 h-8" src="../assets/logo.png" alt="Travella logo" />
         <h2 className="font-bold text-xl md:text-2xl text-gray-800">

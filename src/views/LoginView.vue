@@ -4,14 +4,6 @@
       @submit="onSubmit"
       class="flex flex-col rounded-lg mdgra p-5 max-w-[500px] md:w-1/2 w-11/12 border-2"
     >
-      <div
-        className="flex items-center justify-center gap-2 fixed left-8 top-4 xtab:static"
-      >
-        <img className="w-8 h-8" src="../assets/logo.png" alt="Travella logo" />
-        <h2 className="font-bold text-xl md:text-2xl text-gray-800">
-          Travella
-        </h2>
-      </div>
       <h1 class="text-center text-mainblue font-semibold text-lg mt-4">
         Log into Travella
       </h1>

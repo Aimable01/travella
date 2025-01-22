@@ -5,7 +5,7 @@
     <div class="flex flex-col max-w-[300px] xs:items-start items-center">
       <RouterLink
         to="/"
-        className="flex items-center gap-2 cursor-pointer z-[99] fixed left-8 top-4 xtab:static mt-4"
+        className="flex items-center gap-2 cursor-pointer fixed left-8 top-4 xtab:static mt-4"
       >
         <img
           className="w-8 h-8"
