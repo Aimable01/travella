@@ -19,10 +19,10 @@ module.exports = {
       fourk: "3840px",
     },
     fontFamily: {
+      poppin: ["Poppins", "sans-serif"], // Set Poppins as the primary font
       oxa: ["Oxanium", "sans-serif"],
       roboto: ["Roboto", "sans-serif"],
       rokkit: ["Rokkit", "sans-serif"],
-      poppin: ["Poppins", "sans-serif"],
     },
     colors: {
       ...colors,
@@ -33,11 +33,11 @@ module.exports = {
       gray: colors.gray,
       slate: colors.slate,
 
-      // Custom colors
-      mainwhite: "#fbfbfe",
-      secondary: "#fcf7fa",
-      mainblue: "#411ef8",
-      active: "#1b2682",
+      // Updated custom colors
+      mainwhite: "#f5f7fa",
+      secondary: "#f9f9f9",
+      mainblue: "#3a86ff",
+      active: "#14213d",
     },
   },
   plugins: [scrollbarHide],
