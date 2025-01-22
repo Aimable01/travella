@@ -134,7 +134,9 @@ const onSubmit = async (e: any) => {
       return (window.location.href = "/dashboard");
     }
   } catch (err: any) {
-    error.value = err.response.data.message ?? "Something went wrong";
+    error.value =
+      err.response.data.message ??
+      "Something went wrong, Please contine as Guest";
     console.log(err);
     isLoading.value = false;
   }

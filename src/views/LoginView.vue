@@ -117,7 +117,9 @@ const onSubmit = async (e: any) => {
     }
   } catch (err: any) {
     console.log(err);
-    error.value = err.response?.data?.message ?? "Something went wrong";
+    error.value =
+      err.response?.data?.message ??
+      "Something went wrong, Please continue as Guest";
     isLoading.value = false;
   }
 };

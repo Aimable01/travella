@@ -35,10 +35,16 @@
       <div
         class="flex items-center xtab:flex-row flex-col xtab:gap-y-0 gap-y-3 xtab:mt-0 mt-4"
       >
-        <RouterLink to="/landing#" class=""> About </RouterLink>
-        <RouterLink to="/landing#" class="xtab:ml-11"> Services </RouterLink>
-        <RouterLink to="/landing#" class="xtab:ml-11"> Pricing </RouterLink>
-        <RouterLink to="/landing#" class="xtab:ml-11"> Contact </RouterLink>
+        <button @click="scrollToSection('about')" class="">About</button>
+        <button @click="scrollToSection('services')" class="xtab:ml-11">
+          Services
+        </button>
+        <button @click="scrollToSection('pricing')" class="xtab:ml-11">
+          Pricing
+        </button>
+        <button @click="scrollToSection('contact')" class="xtab:ml-11">
+          Contact
+        </button>
       </div>
       <div
         class="flex items-center flex-col xtab:flex-row xtab:gap-y-0 gap-y-4 xtab:mt-0 mt-3"
@@ -62,5 +68,12 @@ const isMobile = ref(false);
 
 const toggleMenu = () => {
   isMobile.value = !isMobile.value;
+};
+
+const scrollToSection = (sectionId: string) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to the section
+  }
 };
 </script>
