@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex w-full bg-mainwhite sticky top-0 z-50 items-center h-[80px] justify-between"
+    class="flex w-full bg-mainwhite/40 backdrop-blur-lg sticky top-0 z-50 items-center h-[80px] justify-between"
   >
     <div
       @click="toggleMenu"
@@ -15,7 +15,7 @@
       }`"
     ></div>
     <div
-      :class="`flex xtab:static absolute xtab:flex-row flex-col items-center justify-between w-full bg-inherit py-11 left-0 ${
+      :class="`flex xtab:static absolute xtab:flex-row flex-col items-center justify-between w-full bg-inherit  left-0 ${
         isMobile ? 'top-0' : '-top-[1000px]'
       } xtab:py-0 duration-500 px-[5%]`"
     >
