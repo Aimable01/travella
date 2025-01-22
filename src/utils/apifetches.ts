@@ -59,18 +59,18 @@ export const fetcNearby = async (query: string) => {
   }
 };
 
-// Search images with error handling
 export const searchImages = async (query: string) => {
   try {
-    const url = `https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=${query}&pageNumber=1&pageSize=10&autoCorrect=true`;
-    const res = await fetch(url, imageOpts);
-    if (!res || !res.value) {
-      throw new Error("No images found.");
-    }
-    console.log(res.value);
-    return res.value; // Return the array of images
+    const res = await axios.get(`https://api.unsplash.com/search/photos`, {
+      params: {
+        query,
+        client_id: import.meta.env.VITE_UNSPLASH_API_KEY,
+        per_page: 10,
+      },
+    });
+    return res.data.results;
   } catch (error) {
-    console.error(`Error searching images for query "${query}":`, error);
+    console.error("Error fetching images from Unsplash:", error);
     throw new Error("Failed to fetch images. Please try again later.");
   }
 };

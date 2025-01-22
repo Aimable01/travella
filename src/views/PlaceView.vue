@@ -41,7 +41,7 @@
                 :key="i"
               >
                 <div class="d-flex fill-height justify-center align-center">
-                  <img :src="slide?.url" class="object-cover" />
+                  <img :src="slide?.urls?.regular" class="object-cover" />
                 </div>
               </v-carousel-item>
             </v-carousel>
