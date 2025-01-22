@@ -50,18 +50,10 @@
       >
         Signup
       </button>
-      <p class="textl-lg text-center my-2">Or</p>
-      <div className="flex justify-center">
-        <div
-          className="rounded-md  mr-2 flex items-center bg-white pr-3 border-2 hover:shadow cursor-pointer"
-        >
-          <GoogleVue />
-          <span class="truncate text-sm">Sign in with Google</span>
-        </div>
-      </div>
+      <p class="textl-lg text-center mt-6 mb-2">Or</p>
       <p
         @click="continueAsGuest"
-        class="mt-4 text-mainblue text-center cursor-pointer w-fit mx-auto"
+        class="text-mainblue text-center cursor-pointer w-fit mx-auto"
       >
         Continue as Guest
       </p>
@@ -126,9 +118,7 @@ const onSubmit = async (e: any) => {
       return (window.location.href = "/dashboard");
     }
   } catch (err: any) {
-    error.value =
-      err.response.data.message ??
-      "Something went wrong, Please contine as Guest";
+    error.value = "Something went wrong, Please continue as Guest";
     console.log(err);
     isLoading.value = false;
   }

@@ -22,6 +22,7 @@
       <RouterLink
         to="/"
         className="flex items-center gap-2 cursor-pointer fixed left-8 top-4 xtab:static mt-4"
+        @click="closeMenu"
       >
         <img
           className="w-8 h-8"
@@ -35,7 +36,7 @@
       <div
         class="flex items-center xtab:flex-row flex-col xtab:gap-y-0 gap-y-3 xtab:mt-0 mt-4"
       >
-        <button @click="scrollToSection('about')" class="">About</button>
+        <button @click="scrollToSection('about')">About</button>
         <button @click="scrollToSection('services')" class="xtab:ml-11">
           Services
         </button>
@@ -49,10 +50,11 @@
       <div
         class="flex items-center flex-col xtab:flex-row xtab:gap-y-0 gap-y-4 xtab:mt-0 mt-3"
       >
-        <a href="/login" class=""> Login </a>
+        <a href="/login" @click="closeMenu"> Login </a>
         <a
           href="/register"
           class="xtab:ml-6 px-4 py-2 rounded-3xl bg-mainblue text-white"
+          @click="closeMenu"
         >
           Register
         </a>
@@ -70,10 +72,15 @@ const toggleMenu = () => {
   isMobile.value = !isMobile.value;
 };
 
+const closeMenu = () => {
+  isMobile.value = false;
+};
+
 const scrollToSection = (sectionId: string) => {
   const section = document.getElementById(sectionId);
   if (section) {
-    section.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to the section
+    section.scrollIntoView({ behavior: "smooth" });
+    closeMenu(); // Close menu after clicking
   }
 };
 </script>
