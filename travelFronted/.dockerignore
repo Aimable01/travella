@@ -1,0 +1,10 @@
+# Ignore common development files and directories
+.git
+.gitignore
+node_modules/
+logs/
+*.log
+.env
+
+# Ignore specific files
+my_secret_key.pem
